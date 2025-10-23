@@ -1,3 +1,5 @@
+import random
+
 def create_card(rank:str,suite:str) -> dict:
     card = {}
     valid_card = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "A", "J", "Q", "K"]
@@ -43,7 +45,6 @@ def create_deck() -> list[dict]:
 
 
 def shuffle(deck:list[dict]) -> list[dict]:
-    import random
     for shfle in range(1000):
         index1 = random.randint(0, 51)
         index2 = random.randint(0, 51)
