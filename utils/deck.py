@@ -51,6 +51,3 @@ def shuffle(deck:list[dict]) -> list[dict]:
         if index1 != index2:
             deck[index1], deck[index2] = deck[index2], deck[index1]
     return deck
-
-
-
