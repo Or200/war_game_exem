@@ -25,8 +25,28 @@ def init_game() -> dict:
     return game_dict
 
     
-def play_round(p1:dict,p2:dict):
-    pass
+def play_round(p1:dict,p2:dict) -> None:
+
+    player_1 = p1["hand"].pop(0)
+    player_2 = p2["hand"].pop(0)
+
+    if player_1["value"] > player_2["value"]:
+        p1["won_pile"].append(player_1)
+        p1["won_pile"].append(player_2)
+        print(f"{p1["name"]} Win this round")
+
+    elif player_1["value"] < player_2["value"]:
+        p2["won_pile"].append(player_1)
+        p2["won_pile"].append(player_2)
+        print(f"{p2["name"]} Win this round")
+
+    else:
+        print(f"Win-Win")
+
+
+
+   
+    
 
 
 
