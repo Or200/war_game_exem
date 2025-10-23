@@ -27,18 +27,32 @@ def init_game() -> dict:
     
 def play_round(p1:dict,p2:dict) -> None:
 
+    bucket = []
+
     player_1 = p1["hand"].pop(0)
     player_2 = p2["hand"].pop(0)
 
     if player_1["value"] > player_2["value"]:
         p1["won_pile"].append(player_1)
         p1["won_pile"].append(player_2)
+        if bucket:
+            p1["won_pile"].extend(bucket)
         print(f"{p1["name"]} Win this round")
 
     elif player_1["value"] < player_2["value"]:
         p2["won_pile"].append(player_1)
         p2["won_pile"].append(player_2)
+        if bucket:
+            p2["won_pile"].extend(bucket)
         print(f"{p2["name"]} Win this round")
 
     else:
-        print(f"Win-Win")
+        if len(p1["hand"]) > 3 and len (p2["hand"]) > 3:
+            print("! W  A R !")
+            bucket = []
+            for i in range(3):
+                player_1 = p1["hand"].pop(0)
+                player_2 = p2["hand"].pop(0)
+                bucket.append(player_1)
+                bucket.append(player_2)
+            play_round(p1, p2)
