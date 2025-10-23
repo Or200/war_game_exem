@@ -1,8 +1,8 @@
 def create_player(name:str) -> dict:
-    pass
+    return {}
 
 def init_game() -> dict:
-    pass
+    return {}
 
 def play_round(p1:dict,p2:dict):
     pass
