@@ -49,7 +49,6 @@ def play_round(p1:dict,p2:dict) -> None:
     else:
         if len(p1["hand"]) > 3 and len (p2["hand"]) > 3:
             print("! W  A R !")
-            bucket = []
             for i in range(3):
                 player_1 = p1["hand"].pop(0)
                 player_2 = p2["hand"].pop(0)
